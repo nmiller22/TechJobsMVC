@@ -60,8 +60,10 @@ namespace TechJobs.Models
                 {
                     string aValue = row[key];
 
-                    if (aValue.ToLower().Contains(value.ToLower()))
+                    if (value == null)
                     {
+
+                    } else if (aValue.ToLower().Contains(value.ToLower())) {
                         jobs.Add(row);
 
                         // Finding one field in a job that matches is sufficient
@@ -90,8 +92,10 @@ namespace TechJobs.Models
             foreach (Dictionary<string, string> row in AllJobs)
             {
                 string aValue = row[column];
+                if (value == null)
+                {
 
-                if (aValue.ToLower().Contains(value.ToLower()))
+                } else if (aValue.ToLower().Contains(value.ToLower()))
                 {
                     jobs.Add(row);
                 }
